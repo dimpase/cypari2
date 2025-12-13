@@ -55,6 +55,13 @@ if host_machine.system() == 'darwin'
   endif
 endif
 
+pari_prefix = get_option('pari-prefix')
+if pari_prefix != ''
+   pari_header_include_dirs += include_directories(pari_prefix + '/include')
+   pari_lib_dirs += [pari_lib_dirs + '/lib']
+endif
+
+
 # Explicitly check for header to give better error message (using -v to show search paths)
 cc.has_header(
   'pari/pari.h',
