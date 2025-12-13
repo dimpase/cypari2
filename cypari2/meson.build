@@ -49,8 +49,8 @@ endforeach
 config_data = configuration_data()
 config_data.set('version', meson.project_version())
 configure_file(
-  input: 'cypari2.py.in',
-  output: 'cypari2.py',
+  input: 'cypari2.pc.in',
+  output: 'cypari2.pc',
   configuration: config_data,
   install: true,
   install_dir: py.get_install_dir() / 'cypari2'
